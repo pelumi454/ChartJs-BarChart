@@ -3,7 +3,6 @@ import { Bar, defaults } from "react-chartjs-2";
 import "../barChart.css";
 import { Chart } from "react-chartjs-2";
 
-
 Chart.defaults.global.legend.display = false; 
 defaults.global.tooltips.enabled = false;
 // defaults.global.legend.position = "bottom";
@@ -41,37 +40,38 @@ const BarChart = () => {
           height={400}
           width={600}
           options={{
-    responsive: true,
-            plugins: {
-              legend: {
-                position: 'top',
-                maintainAspectRatio: false,
-                scales: {
-                  xAxes: [
-                    {
-                      gridLines: {
-                        display: false,
-                        labelString: "value",
-                      },
-                      barPercentage: 0.12,
-                    },
-                  ],
-                  yAxes: [
-                    {
-                      gridLines: {
-                        display: false,
-                        labelString: "value",
-                      },
-                      ticks: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 25,
-                      },
-                    },
-                  ],
+            maintainAspectRatio: false,
+            scales: {
+              xAxes: [
+                {
+                  gridLines: {
+                    display: false,
+                    labelString: "value",
+                  },
+                  barPercentage: 0.12,
                 },
-              }
-            }
+              ],
+              yAxes: [
+                {
+                  gridLines: {
+                    display: false,
+                    labelString: "value",
+                  },
+                  ticks: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 25,
+                  },
+                },
+              ],
+            },
+
+            // plugins: {
+            //   labels: {
+            //     usePointStyle: true,
+            //     pointStyle: "rectRounded",
+            //   },
+            // },
           }}
         />
       </div>
