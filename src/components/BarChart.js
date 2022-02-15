@@ -29,6 +29,7 @@ const BarChart = () => {
                 backgroundColor: '#64E5D6',
                 borderWidth: 0,
                 borderRadius: Number.MAX_VALUE,
+                borderSkipped: false
               },
             ],
           }}
