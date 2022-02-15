@@ -1,11 +1,6 @@
 import React from "react";
-import { Bar, defaults } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import "../barChart.css";
-import { Chart } from "react-chartjs-2";
-
-Chart.defaults.global.legend.display = false; 
-defaults.global.tooltips.enabled = false;
-// defaults.global.legend.position = "bottom";
 
 const BarChart = () => {
   return (
@@ -14,64 +9,54 @@ const BarChart = () => {
         <Bar
           data={{
             labels: [
-              "January",
-              "Febuary",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
+              'January',
+              'Febuary',
+              'March',
+              'April',
+              'May',
+              'June',
+              'July',
+              'August',
+              'September',
+              'October',
+              'November',
+              'December',
             ],
             datasets: [
               {
-                label: "Quantity",
+                label: 'Quantity',
                 data: [12, 19, 3, 5, 9, 3, 22, 16, 7, 10, 4, 19],
-                backgroundColor: "#64E5D6",
-                borderColor: "red",
-                borderRadius: 20,
+                backgroundColor: '#64E5D6',
+                borderWidth: 0,
+                borderRadius: Number.MAX_VALUE,
+                borderSkipped: false
               },
             ],
           }}
-          height={400}
-          width={600}
           options={{
-            maintainAspectRatio: false,
-            scales: {
-              xAxes: [
-                {
-                  gridLines: {
-                    display: false,
-                    labelString: "value",
-                  },
-                  barPercentage: 0.12,
-                },
-              ],
-              yAxes: [
-                {
-                  gridLines: {
-                    display: false,
-                    labelString: "value",
-                  },
-                  ticks: {
-                    beginAtZero: true,
-                    min: 0,
-                    max: 25,
-                  },
-                },
-              ],
+            plugins: {
+              legend: {
+                display: false,
+              },
             },
-
-            // plugins: {
-            //   labels: {
-            //     usePointStyle: true,
-            //     pointStyle: "rectRounded",
-            //   },
-            // },
+            scales: {
+              xAxes: {
+                grid: {
+                  display: false,
+                },
+              },
+              yAxes: {
+                beginAtZero: true,
+                grid: {
+                  display: false,
+                },
+              },
+            },
+            datasets: {
+              bar: {
+                barPercentage: 0.2,
+              },
+            },
           }}
         />
       </div>
